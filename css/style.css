@@ -1,0 +1,338 @@
+@font-face{
+  font-family: "pretendard Variable";
+  font-weight: 300;
+}
+
+@font-face{
+  font-family: "darker-grotesque", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+*{
+  font-family: 'darker-grotesque', 'Pretendard Variable'; 
+}
+
+html, body, section, h1,h2,h3,h4, p,a{
+  margin:0;
+}
+
+:root{
+  --BETA-PINK: #ffe6f3;
+  --BETA-BROWN: #bda17e;
+  --BETA-LIGHTBROWN: #e1c59e;
+  --BETA-GRAY: #353636;
+}
+
+html,body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background-color: white;
+      transition: background-color 0.5s ease;
+
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    body::selection{
+      background-color: var(--BETA-PINK);
+    }
+    body.main-mode{
+      background-color: var(--BETA-PINK);
+    }
+    body.message-mode{
+      background-color: var(--BETA-LIGHTBROWN);
+    }
+
+    section{padding: 50px 0px;}
+
+    h1{font-size:3rem; margin: 0; margin-bottom: 15px;
+    margin-top:20px; word-break: keep-all; font-weight: normal;}    
+    h2{font-size:1.5rem; font-weight: normal; word-break: keep-all;}
+    .enh2{font-size:1.7rem;}
+    h3{font-size:1.rem; font-weight: normal; word-break: keep-all;}
+    p{font-size: 1rem; line-height: 1.9rem; word-break: keep-all;}
+
+    .ko{
+      font-family: 'Pretendard Variable';
+      font-size: 1rem;
+    }
+    .en{
+      font-family: 'darker-grotesque';
+      font-size: 1.3rem;
+      line-height: 1.4rem;
+    }
+    .enmini{
+      font-family: 'darker-grotesque';
+      font-size: 1rem;
+      line-height: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .bold{
+      font-weight: bold;
+    }
+
+    a{text-decoration: none; color: black;}
+
+    .wrap{
+      width:70%; 
+      margin: 0 auto;
+    }
+    .flex{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .flexitem-3{
+      width: 25%;
+    }
+    .flexitem-6{
+      width: 58%;
+    }
+    .flexitem-half{
+      width:48%;
+    }
+
+    .grid_container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      column-gap: 10px;
+      row-gap: 25px;
+    }
+
+    .grid_item{
+      background-color: white;
+    }
+
+    .grid_img{
+      width:100%;
+    }
+
+    .t-center{
+      text-align: center;
+    }
+    .t-left{
+      text-align: left;
+    }
+
+    .t-pink{
+      color: var(--BETA-PINK);
+    }
+    .t-brown{
+      color: var(--BETA-BROWN);
+    }
+    .t-pinkback{
+      background-color: var(--BETA-PINK); display: inline;
+      color: var(--BETA-GRAY);
+    }
+    .b-pink{
+      background-color: var(--BETA-PINK);
+    }
+
+    .blur{
+      backdrop-filter:blur(10px);
+    }
+
+    #nav{
+      position: sticky; top:0; left:0; z-index: 5; 
+      width: 100%; text-align: right;
+      padding-bottom: 15px;
+      }
+
+
+    .hiddenobj{display: none;}
+    .menu{
+      font-size:3rem; padding:30px; cursor:pointer;
+      position: relative;}
+    .menu::after{
+      content: "";
+      position: absolute;
+      left: 30px; /* 텍스트 패딩에 맞춰 조정 */
+      bottom: 15px; /* 텍스트 아래로 밑줄 */
+      width: calc(100% - 60px); /* 전체 너비에서 padding 제외 */
+      height: 3px;
+      background-color: var(--BETA-PINK);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .menu:hover::after{
+      transform: scaleX(1);
+    }
+    .menu.selected::after {
+      transform: scaleX(1); /* 항상 보이도록 */
+    }
+
+
+    .nav_img{height:3rem;}
+
+    #scrollTopBT{
+      width:100px; height:100px; background-color: var(--BETA-PINK);
+      position: fixed; bottom:50px; right:50px; z-index: 5;
+    }
+
+    #prevBT{
+      position:fixed; top:50px; left:50px; z-index:5;
+    }
+
+    .paper-chapter{
+      width:100vw;  
+      position:absolute; top: 150px;
+      display: flex; align-content: center;}
+
+    #main{
+    	left: 0;}
+    #program{
+    	left: 100%;}
+    #designer{
+    	left: 100%;}
+    #work{
+    	left: 100%;}
+    #message-book{
+    	left: 100%;
+    }
+
+    .logo{width:90%; display: inline-block;}
+
+    .thumb_work{width:400px; height:auto;}
+    .thumb_designer{width:150px; height:auto;}
+    .fullimg{
+      width: 100%;
+    }
+
+    .workBT{
+      font-size: 2rem; background-color:pink; padding:10px; 
+      position: relative; top: 0px; left:0px; z-index: 3;
+      cursor:pointer;
+      } 
+    .work_thumb{
+      width:100px; position: relative; z-index: 3;
+    }
+
+    .bg_svg{height: 100vh; z-index: 1; position: absolute;}
+
+
+    .box{
+      width:100%; height:100%; margin:0; padding:0;
+    }
+    #booth_layout_1{
+      margin: 0; padding:0; display: block;
+    }
+    #booth_layout_2{
+      margin: 0; padding:0; display: none;
+    }
+    #booth_layout_3{
+      margin: 0; padding:0; display: none;
+    }
+      #booth001{
+      top:180px; left:120px;
+    }
+
+    #guestbook-form {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      padding: 20px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    #guestbook-form input,
+    #guestbook-form textarea {
+      font-size: 1rem;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fafafa;
+      font-family: sans-serif;
+      transition: border 0.2s ease, background-color 0.2s ease;
+    }
+
+    #guestbook-form input:focus,
+    #guestbook-form textarea:focus {
+      border-color: #888;
+      background-color: #fff;
+      outline: none;
+    }
+
+    #nickname {
+      width: 10%;
+    }
+
+    #message {
+      width: 80%;
+      min-height: 20px;
+      max-height: 100px;
+      overflow-y: auto;
+      line-height: 1.4;
+    }
+
+    #guestbook-form button {
+      align-self: flex-start;
+      width: 10%;
+      padding: 10px 18px;
+      font-size: 0.8rem;
+      background-color: var(--BETA-GRAY, #333);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    #guestbook-form button:hover {
+      background-color: #555;
+    }
+
+
+
+      #messages-list {
+      list-style: none;
+      padding: 0;
+      gap: 30px;
+      margin-top: 20px;
+      column-count: 5;
+      column-gap: 15px;
+    }
+
+    #messages-list li {
+      display: inline-block;
+      break-inside: avoid;
+      background: var(--BETA-PINK); 
+      width: 160px;
+      height: 100%;
+      padding: 12px 16px;
+      margin-bottom: 30px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+      border: 1px solid var(--BETA-PINK);
+      position: relative;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+
+    #messages-list li:hover {
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    /* 닉네임과 메시지 구분 */
+    .message-nickname {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+    }
+
+    .message-text {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 1rem;
+      line-height: 1.3rem;
+    }
