@@ -14,6 +14,8 @@ const buttons = [
   document.getElementById("message-bookBT"),
 ];
 
+const menus = document.querySelectorAll(".menu")
+
 const booth1 = document.getElementById('booth_layout_1');
 const booth2 = document.getElementById('booth_layout_2');
 const booth3 = document.getElementById('booth_layout_3');
@@ -106,14 +108,26 @@ buttons.forEach((button, targetIndex) => {
 		  if (targetPage.id === "message-book") {
 		    body.classList.remove("main-mode");
 		    body.classList.add("message-mode");
+		    scrollTopBT.src="./img/scrollTopBT_B.png";
+		   	for (const menu of menus) {
+				menu.classList.remove('t-pink');
+}
 		  } 
 		  else if(targetPage.id ==="main"){
 		  	body.classList.remove("message-mode");
 		  	body.classList.add("main-mode");
+		  	scrollTopBT.src="./img/scrollTopBT.png";
+		  	for (const menu of menus) {
+				menu.classList.add('t-pink');
+}
 		  }
 		  else {
 		    body.classList.remove("message-mode");
 		    body.classList.remove("main-mode");
+		    scrollTopBT.src="./img/scrollTopBT_B.png";
+		    for (const menu of menus) {
+				menu.classList.remove('t-pink');
+}
 
 		  }
 
@@ -164,3 +178,48 @@ FloorBT3.onclick = () => {
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("main-mode");
 });
+
+
+
+//아래 스크롤 방지
+
+  const limit = 2100; // px 기준
+  let locked = false;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > limit && !locked) {
+      document.body.style.overflow = "hidden"; // 스크롤 막기
+      locked = true;
+
+      // 현재 위치 유지 (스크롤 막히기 전에 마지막 위치 유지)
+      window.scrollTo(0, limit);
+    }
+
+    // 다시 limit보다 위로 올라오면 스크롤 해제
+    if (window.scrollY <= limit && locked) {
+      document.body.style.overflow = "auto"; // 다시 스크롤 가능
+      locked = false;
+    }
+  });
+
+
+//메인로고 hover 이벤트
+
+const mainlogo_box = document.getElementById("mainlogo_box")
+const mainlogo = document.getElementById("mainlogo")
+const maintext_ko = document.getElementById("maintext")
+const maintext_en = document.getElementById("maintext-en")
+
+
+	mainlogo_box.addEventListener("mouseenter", () => {
+	    mainlogo.src='./img/logo_pink.png';
+	    mainlogo.style.filter = "blur(20px)";
+	    maintext.classList.remove("hiddenobj");
+	  });
+
+	  mainlogo_box.addEventListener("mouseleave", () => {
+	    mainlogo.src='./img/logo_pink.png';
+	    mainlogo.style.filter = "";
+	    maintext.classList.add("hiddenobj");
+
+	  });

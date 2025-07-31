@@ -24,6 +24,12 @@ html, body, section, h1,h2,h3,h4, p,a{
   --BETA-GRAY: #353636;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+html{
+  scroll-behavior: smooth;
+}
 html,body {
       position: relative;
       height: 100%;
@@ -41,32 +47,52 @@ html,body {
       overflow-x: hidden;
     }
     body::selection{
-      background-color: var(--BETA-PINK);
-    }
-    body.main-mode{
-      background-color: var(--BETA-PINK);
-    }
-    body.message-mode{
       background-color: var(--BETA-LIGHTBROWN);
+    }
+    /* 배경 이미지용 ::before */
+    body::before {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("../img/morning.png");
+      background-size: cover;
+      background-position: center;
+      opacity: 0; /* 기본값: 안 보임 */
+      transition: opacity 0.8s ease;
+      pointer-events: none; /* 클릭 차단 방지 */
+    }
+
+    /* 배경 이미지 보여질 때 */
+    body.main-mode::before {
+      opacity: 1;
+    }
+
+    body.message-mode {
+      background-color: var(--BETA-LIGHTBROWN);
+      transition: background-color 0.8s ease;
     }
 
     section{padding: 50px 0px;}
 
     h1{font-size:3rem; margin: 0; margin-bottom: 15px;
     margin-top:20px; word-break: keep-all; font-weight: normal;}    
-    h2{font-size:1.5rem; font-weight: normal; word-break: keep-all;}
-    .enh2{font-size:1.7rem;}
+    h2{font-size:1.5rem; font-weight: normal; word-break: keep-all;
+      line-height: 2.3rem;}
+    .enh2{font-size:1.7rem; line-height: 2.0rem;}
     h3{font-size:1.rem; font-weight: normal; word-break: keep-all;}
-    p{font-size: 1rem; line-height: 1.9rem; word-break: keep-all;}
+    p{font-size: 1.2rem; line-height: 2.2rem; word-break: keep-all;}
 
     .ko{
       font-family: 'Pretendard Variable';
-      font-size: 1rem;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
     }
     .en{
       font-family: 'darker-grotesque';
-      font-size: 1.3rem;
-      line-height: 1.4rem;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      margin-bottom: 1rem;
     }
     .enmini{
       font-family: 'darker-grotesque';
@@ -74,12 +100,25 @@ html,body {
       line-height: 1.4rem;
       margin-bottom: 20px;
     }
+    .enbig{
+      font-family: 'darker-grotesque';
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
 
     .bold{
       font-weight: bold;
     }
 
     a{text-decoration: none; color: black;}
+
+
+    .bottomM{
+      margin-bottom: 30px;
+    }
+    .tum{
+      height:100px;
+    }
 
     .wrap{
       width:70%; 
@@ -99,7 +138,12 @@ html,body {
     .flexitem-half{
       width:48%;
     }
-
+    .grid_credit{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 8px;
+      row-gap:  30px;
+    }
     .grid_container{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -115,13 +159,21 @@ html,body {
       width:100%;
     }
 
+    
+
     .t-center{
       text-align: center;
     }
     .t-left{
       text-align: left;
     }
+    .t-right{
+      text-align: right;
+    }
 
+    .t-white{
+      color:white;
+    }
     .t-pink{
       color: var(--BETA-PINK);
     }
@@ -149,7 +201,7 @@ html,body {
 
     .hiddenobj{display: none;}
     .menu{
-      font-size:3rem; padding:30px; cursor:pointer;
+      font-size:2.5rem; padding:30px; cursor:pointer;
       position: relative;}
     .menu::after{
       content: "";
@@ -174,17 +226,24 @@ html,body {
     .nav_img{height:3rem;}
 
     #scrollTopBT{
-      width:100px; height:100px; background-color: var(--BETA-PINK);
+      width:40px;
       position: fixed; bottom:50px; right:50px; z-index: 5;
+      cursor:pointer;
     }
+
 
     #prevBT{
       position:fixed; top:50px; left:50px; z-index:5;
+      cursor:pointer;
     }
+    #prevBTimg{
+      height:40px;
+    }
+
 
     .paper-chapter{
       width:100vw;  
-      position:absolute; top: 150px;
+      position:absolute; top: 13vh;
       display: flex; align-content: center;}
 
     #main{
@@ -200,6 +259,13 @@ html,body {
     }
 
     .logo{width:90%; display: inline-block;}
+    #maintext{position: fixed; top: 15vh; left:15vw;
+      }
+
+    .logoimg{width: 7rem;}
+    .imglink{
+      height:6rem; padding: 1rem;
+    }
 
     .thumb_work{width:400px; height:auto;}
     .thumb_designer{width:150px; height:auto;}
