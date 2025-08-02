@@ -139,8 +139,8 @@ buttons.forEach((button, targetIndex) => {
 
 
 //panzoom을 zoomInstace 변수에 담고 프로퍼티를 설정합니다. = 즉시 panzoom 실행
-const zoomInstance = panzoom(booth1, {
-  maxZoom: 1,
+const zoomInstance = panzoom(booth3, {
+  maxZoom: 4.5,
   minZoom: 0.5
 });
 
@@ -149,7 +149,7 @@ FloorBT1.onclick = () => {
 	booth2.style.display = 'none';
 	booth3.style.display = 'none';
 	const zoomInstance= panzoom(booth1,{
-		maxZoom: 1,
+		maxZoom: 4.5,
 		minZoom: 0.5
 	});
 }
@@ -159,7 +159,7 @@ FloorBT2.onclick = () => {
 	booth2.style.display = 'block';
 	booth3.style.display = 'none';
 	const zoomInstance= panzoom(booth2,{
-		maxZoom: 1,
+		maxZoom: 4.5,
 		minZoom: 0.5
 	});
 }
@@ -169,7 +169,7 @@ FloorBT3.onclick = () => {
 	booth2.style.display = 'none';
 	booth3.style.display = 'block';
 	const zoomInstance= panzoom(booth3,{
-		maxZoom: 1,
+		maxZoom: 4.5,
 		minZoom: 0.5
 	});
 }
@@ -222,4 +222,13 @@ const maintext_en = document.getElementById("maintext-en")
 	    mainlogo.style.filter = "";
 	    maintext.classList.add("hiddenobj");
 
+	  });
+
+
+//html 조각 불러오기
+
+	  fetch('designer_list.html')
+	  .then(res => res.text())
+	  .then(html => {
+	  	document.getElementById('designer_list').innerHTML = html
 	  });
