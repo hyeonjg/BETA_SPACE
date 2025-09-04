@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Meta Space: 2025 서울과기대 시각디자인 졸업전시 웹 아카이브</title>
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="description" content="서울과학기술대학교 시각디자인전공 43회 졸업전시 아카이빙 웹사이트">
+  <meta name="keyword" content="졸업전시, 시각디자인, 서울과학기술대학교, 서과기대, 서울과기대, 과기대, 시디과, 졸전, 디자인, 그래픽디자인, 전시, 아카이빙, 아카이브">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <!--SNS용-->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Meta Space: 2025 서울과학기술대학교 시각디자인 졸업전시">
+  <meta property="og:description" content="서울과학기술대학교 시각디자인전공 43회 졸업전시 아카이빙 웹사이트">
+  <meta property="og:url"   content="https://www.2025stvd.meta-space">
+  <meta property="og:image" content="">
+ 
+  <!--스타일시트-->
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/aqh7fah.css">
+
+</head>
+<body class='message'>
+
+  	<nav id='nav' class='blur'>
+  		<a href='index.html' class='menu t-pink'>MAIN</a>
+      <a href='program.html' class='menu t-pink'>PROGRAM</a>
+      <a href='designer.html' class='menu t-pink'>DESIGNER</a>
+      <a href='work.html' class='menu t-pink'>WORK</a>
+      <a href='message.html' class='menu t-pink'>MESSAGE</a>
+  	</nav> 
+
+    <img id="scrollTopBT" src="/img/scrollTopBT_B.png">
+
+    <div class=tum-50></div>
+
+	      	<div id="message-book">
+          <div class='wrap'>
+
+            <form id="guestbook-form" class='flex'>
+              <input type="text" id="nickname" placeholder="닉네임" required />
+              <textarea id="message" placeholder="메시지를 입력하세요" required></textarea>
+              <button type="submit">작성하기</button>
+            </form>
+
+            <ul id="messages-list"></ul>
+          </div>
+
+    </div>
+          </div>
+        </div>
+
+    </div>
+
+     <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+      import { setupGuestbook } from "/js/firebase.js";  // 👈 외부 JS 모듈 불러오기
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCHcgpkrBkYiLY-2as19NFMM31vS14Kq74",
+        authDomain: "stvd43thgrd-beta-zone.firebaseapp.com",
+        projectId: "stvd43thgrd-beta-zone",
+        storageBucket: "stvd43thgrd-beta-zone.firebasestorage.app",
+        messagingSenderId: "275615776995",
+        appId: "1:275615776995:web:8d03e3e43c0fe988c485d6",
+        measurementId: "G-16475YNNX8"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      setupGuestbook(db); // 👈 firebase.js 안에서 정의한 함수 호출
+    </script>
+    <script src='/js/bad_words.js'></script>
+    <script src='/js/scrollToTop.js'></script>
+
+</body>
+</html>
