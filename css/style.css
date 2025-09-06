@@ -1,6 +1,7 @@
 @font-face{
-  font-family: "pretendard Variable";
-  font-weight: 300;
+  font-family: "pretendard";
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+  font-weight: 100;
 }
 
 @font-face{
@@ -10,7 +11,7 @@
 }
 
 *{
-  font-family: 'darker-grotesque', 'Pretendard Variable'; 
+  font-family: 'darker-grotesque', 'Pretendard'; 
 }
 
 html, body, section, h1,h2,h3,h4, p,a{
@@ -39,7 +40,7 @@ html,body {
       background-color: white;
       transition: background-color 0.5s ease;
 
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-family: 'Pretendard', 'darker-grotesque';
       font-size: 14px;
       color: #000;
       margin: 0;
@@ -122,6 +123,10 @@ html,body {
       height:50px;
     }
 
+    .tum-20{
+      height:20px;
+    }
+
     .wrap{
       width:70%; 
       margin: 0 auto;
@@ -170,7 +175,7 @@ html,body {
     }
 
     .grid_item{
-      background-color: white;
+      color: var(--BETA-PINK);
     }
 
     .grid_img{
@@ -223,6 +228,57 @@ html,body {
     .bg-gray{
       background-color: var(--BETA-GRAY);
     }
+
+
+    .crossA{
+      top: -50px;
+      left: -50px;
+    }
+    .crossB{
+      top: -50px;
+      right: -50px;
+    }
+
+    .crossC{
+      bottom: -50px;
+      left: -50px;
+    }
+    .crossD{
+      bottom: -50px;
+      right: -50px;
+    }
+
+
+    .cross {
+      position: absolute;
+      width: 40px;   /* 전체 크기 */
+      height: 40px;
+    }
+
+    .bar {
+      position: absolute;
+      background-color: var(--BETA-PINK); /* 막대 색상 */
+    }
+
+    .bar.horizontal {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1.5px;   /* 선 굵기 */
+      transform: translateY(-50%);
+    }
+
+    .bar.vertical {
+      top: 0;
+      left: 50%;
+      width: 1.5px;    /* 선 굵기 */
+      height: 100%;
+      transform: translateX(-50%);
+    }
+
+
+
+
 
     #nav{
       position: sticky; top:20; left:0; z-index: 5; 
@@ -325,6 +381,19 @@ html,body {
       #motion_poster{
         height:90vh;
       }
+      #main-section-c-1{
+        position: relative;
+      }
+      #main-section-c-2{
+        position: relative;
+      }
+      #program-section-a{
+        position: relative;
+      }
+
+
+
+
 
     .thumb_work{width:95%; height:auto; transition: opacity 0.4s ease;}
     .thumb_work_link{position: relative;}
