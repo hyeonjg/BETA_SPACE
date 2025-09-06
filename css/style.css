@@ -51,7 +51,7 @@ html,body {
     }
     /* 배경 이미지용*/
     body.main {
-      background-image: url("img/bg.gif");
+      background-image: url("../img/bg.gif");
       background-size: cover;
       background-position: center;
     }
