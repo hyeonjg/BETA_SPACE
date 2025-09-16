@@ -15,14 +15,6 @@
   font-family: 'darker-grotesque', 'Pretendard'; 
 }
 
-@media(max-width: 600px){
-  .flex{
-    flex-direction: column;
-  }
-  .flexitem-half{
-    width:100%;
-  }
-}
 
 html, body, section, h1,h2,h3,h4, p,a{
   margin:0;
@@ -684,3 +676,12 @@ html,body {
       font-size: 1rem;
       line-height: 1.3rem;
     }
+
+    @media(max-width: 600px){
+  .flex{
+    flex-direction: column;
+  }
+  .flexitem-half{
+    width:100%;
+  }
+}
