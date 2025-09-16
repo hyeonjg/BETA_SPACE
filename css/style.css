@@ -19,6 +19,9 @@
   .flex{
     flex-direction: column;
   }
+  .flexitem-half{
+    width:100%;
+  }
 }
 
 html, body, section, h1,h2,h3,h4, p,a{
