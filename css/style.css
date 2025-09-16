@@ -15,6 +15,12 @@
   font-family: 'darker-grotesque', 'Pretendard'; 
 }
 
+@media(max-width: 600px){
+  .flex{
+    flex-direction: column;
+  }
+}
+
 html, body, section, h1,h2,h3,h4, p,a{
   margin:0;
 }
@@ -66,19 +72,19 @@ html,body {
 
     section{padding: 50px 0px;}
 
-    h1{font-size:3em; margin: 0; 
+    h1{font-size:3rem; margin: 0; 
       word-break: keep-all; font-weight: normal;}    
-    h2{font-size:1.5em; font-weight: normal; word-break: keep-all;
-      line-height: 2.3em;}
-    .enh2{font-size:1.7em; line-height: 2.0em;}
-    h3{font-size:1em; font-weight: normal; word-break: keep-all;}
-    p{font-size: 1.2em; line-height: 2em; word-break: keep-all;}
+    h2{font-size:1.5rem; font-weight: normal; word-break: keep-all;
+      line-height: 2.3rem;}
+    .enh2{font-size:1.7rem; line-height: 2.0rem;}
+    h3{font-size:1rem; font-weight: normal; word-break: keep-all;}
+    p{font-size: 1.2rem; line-height: 2.2rem; word-break: keep-all;}
 
 
     .ko{
       font-family: 'Pretendard';
-      font-size: 1.2em;
-      line-height: 1.8em;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
     }
     .komini{
       font-family: 'Pretendard';
@@ -87,25 +93,25 @@ html,body {
     }
     .kobig{
       font-family: 'Pretendard';
-      font-size: 3em;
-      line-height: 2.2em;
+      font-size: 3rem;
+      line-height: 2.2rem;
     }
     .en{
       font-family: 'darker-grotesque';
-      font-size: 1.5em;
-      line-height: 1.5em;
-      margin-bottom: 1em;
+      font-size: 1.5rem;
+      line-height: 2.0rem;
+      margin-bottom: 1rem;
     }
     .enmini{
       font-family: 'darker-grotesque';
-      font-size: 1em;
-      line-height: 1.4em;
+      font-size: 1rem;
+      line-height: 1.4rem;
       margin-bottom: 20px;
     }
     .enbig{
       font-family: 'darker-grotesque';
-      font-size: 1.8em;
-      line-height: 2.2em;
+      font-size: 1.8rem;
+      line-height: 2.2rem;
     }
 
     .ABAP{
