@@ -66,46 +66,46 @@ html,body {
 
     section{padding: 50px 0px;}
 
-    h1{font-size:3rem; margin: 0; 
+    h1{font-size:3em; margin: 0; 
       word-break: keep-all; font-weight: normal;}    
-    h2{font-size:1.5rem; font-weight: normal; word-break: keep-all;
-      line-height: 2.3rem;}
-    .enh2{font-size:1.7rem; line-height: 2.0rem;}
-    h3{font-size:1.rem; font-weight: normal; word-break: keep-all;}
-    p{font-size: 1.2rem; line-height: 2.2rem; word-break: keep-all;}
+    h2{font-size:1.5em; font-weight: normal; word-break: keep-all;
+      line-height: 2.3em;}
+    .enh2{font-size:1.7em; line-height: 2.0em;}
+    h3{font-size:1em; font-weight: normal; word-break: keep-all;}
+    p{font-size: 1.2em; line-height: 2em; word-break: keep-all;}
 
 
     .ko{
       font-family: 'Pretendard';
-      font-size: 1.2rem;
-      line-height: 1.8rem;
+      font-size: 1.2em;
+      line-height: 1.8em;
     }
     .komini{
       font-family: 'Pretendard';
-      font-size: 0.9rem;
-      line-height: 1.5rem;
+      font-size: 0.9em;
+      line-height: 1.5em;
     }
     .kobig{
       font-family: 'Pretendard';
-      font-size: 3rem;
-      line-height: 2.2rem;
+      font-size: 3em;
+      line-height: 2.2em;
     }
     .en{
       font-family: 'darker-grotesque';
-      font-size: 1.5rem;
-      line-height: 1.8rem;
-      margin-bottom: 1rem;
+      font-size: 1.5em;
+      line-height: 1.5em;
+      margin-bottom: 1em;
     }
     .enmini{
       font-family: 'darker-grotesque';
-      font-size: 1rem;
-      line-height: 1.4rem;
+      font-size: 1em;
+      line-height: 1.4em;
       margin-bottom: 20px;
     }
     .enbig{
       font-family: 'darker-grotesque';
-      font-size: 1.8rem;
-      line-height: 2.2rem;
+      font-size: 1.8em;
+      line-height: 2.2em;
     }
 
     .ABAP{
@@ -420,9 +420,9 @@ html,body {
       }
 
       #down{
-        width:150px; height:auto;
-        position: absolute;
-        top: 180%; left: 50%;
+        width:5em; height:auto;
+        position: fixed;
+        bottom: 5%; left: 50%;
         animation: bounce 2s infinite ease-in-out;
       }
       @keyframes bounce {
