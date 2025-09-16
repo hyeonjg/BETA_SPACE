@@ -288,6 +288,10 @@ html,body {
 
     #cover_motion_poster{
       display: inline-block;
+      width:100vw; height: auto;
+    }
+
+    video{
       width:100%; height: auto;
     }
 
