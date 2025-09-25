@@ -440,7 +440,9 @@ html,body {
 
 
 
-
+    .youtube_link{
+      width:100%; height:auto;
+    }
 
     .thumb_work{width:95%; height:auto; transition: opacity 0.4s ease;}
     .thumb_work_link{position: relative;}
