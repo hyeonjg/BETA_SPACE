@@ -1,16 +1,3 @@
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
-    font-weight: 200;
-    font-display: swap;
-}
-
-@font-face{
-  font-family: "darker-grotesque", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
 *{
   font-family: 'darker-grotesque', 'Pretendard'; 
 }
@@ -19,6 +6,7 @@
 html, body, section, h1,h2,h3,h4, p,a{
   margin:0;
 }
+
 
 :root{
   --BETA-PINK: #ffe6f3;
@@ -60,20 +48,25 @@ html,body {
       background-position: center;
     }
 
+    body.graybg{
+      background-color: var(--BETA-GRAY);
+      color: var(--BETA-PINK);
+    }
+
     body.message {
       background-color: var(--BETA-LIGHTBROWN);
       transition: background-color 0.8s ease;
     }
 
-    section{padding: 50px 0px;}
 
-    h1{font-size:3rem; margin: 0; 
+
+    h1{font-size:2.8rem; margin: 0; 
       word-break: keep-all; font-weight: normal;}    
-    h2{font-size:1.5rem; font-weight: normal; word-break: keep-all;
-      line-height: 2.3rem;}
+    h2{font-size:2rem; font-weight: normal; word-break: keep-all;
+      line-height: 2.3rem; margin-top:0.5rem;}
     .enh2{font-size:1.7rem; line-height: 2.0rem;}
     h3{font-size:1rem; font-weight: normal; word-break: keep-all;}
-    p{font-size: 1.2rem; line-height: 2.2rem; word-break: keep-all;}
+    p{font-size: 1.2rem; line-height: 2rem; word-break: keep-all;}
 
 
     .ko{
@@ -83,7 +76,7 @@ html,body {
     }
     .komini{
       font-family: 'Pretendard';
-      font-size: 0.9em;
+      font-size: 1rem;
       line-height: 1.5em;
     }
     .kobig{
@@ -99,13 +92,18 @@ html,body {
     }
     .enmini{
       font-family: 'darker-grotesque';
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.4rem;
       margin-bottom: 20px;
     }
     .enbig{
       font-family: 'darker-grotesque';
       font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+    .entitle{
+      font-family: 'darker-grotesque';
+      font-size: 3rem;
       line-height: 2.2rem;
     }
 
@@ -125,7 +123,7 @@ html,body {
       margin-bottom: 30px;
     }
     .tum{
-      height:100px;
+      height:80px;
     }
     .tum-50{
       height:50px;
@@ -138,6 +136,7 @@ html,body {
     .wrap{
       width:70%; 
       margin: 0 auto;
+      position: relative;
     }
     .flex{
       display: flex;
@@ -153,7 +152,7 @@ html,body {
 
 
     .flexitem-3{
-      width: 25%;
+      width: 27%;
     }
     .flexitem-6{
       width: 58%;
@@ -182,12 +181,30 @@ html,body {
       row-gap: 25px;
     }
 
+     .program-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 6rem;
+      row-gap: 25px;
+    }
+
     .grid_item{
       color: var(--BETA-PINK);
     }
 
     .grid_img{
       width:100%;
+      backface-visibility: hidden; /* 깜빡임 방지 */
+      will-change: transform, filter;
+      transition: transform .28s cubic-bezier(.2,.8,.2,1), filter .28s;
+      transform-origin: center center;
+      /* 약간의 3D 가속 트릭 */
+      transform: translateZ(0);
+    }
+
+    .grid_img:hover,
+    .grid_img:focus-within {
+      transform: scale(1.03); 
     }
 
     
@@ -314,7 +331,8 @@ html,body {
     .hiddenobj{display: none;}
     .menu{
       font-size:2rem; padding:30px; cursor:pointer;
-      position: relative;}
+      position: relative;
+      font-family: 'darker-grotesque';}
     .menu::after{
       content: "";
       position: absolute;
@@ -364,7 +382,10 @@ html,body {
       position:relative;
     }
     .logo{width:90%; display: inline-block;}
-    #maintext{position: absolute; top: 15vh; left:15vw;
+    #maintext{position: absolute;
+      top: 50%;            /* 부모 기준 수직 중앙 */
+      left: 50%;           /* 부모 기준 수평 중앙 */
+      transform: translate(-50%, -50%);
       z-index:5;
       }
 
@@ -461,8 +482,8 @@ html,body {
     .thumb_work_link:hover .thumb_title{
       opacity: 1;
     }
-    .thumb_designer{width:30%; height:auto;}
-    .flex_info{width: 65%; margin: 0;}
+    .thumb_designer{width:25%; height:auto;}
+    .flex_info{width: 75%; margin: 0;}
     
 
     .img_interview{width:100%; height:auto;}
@@ -471,10 +492,31 @@ html,body {
     }
 
     .workBT{
-      font-size: 2rem; background-color:pink; padding:10px; 
+      margin: 0.6rem; display: inline-block;
+      font-size: 1.5rem; background-color:var(--BETA-PINK); padding:0.3rem 1rem; 
+      border-radius: 1.5rem;
+      outline: 1px solid var(--BETA-PINK); /* 윤곽선 */
+      outline-offset: 5px;
       position: relative; top: 0px; left:0px; z-index: 3;
       cursor:pointer;
       } 
+    .workBT:hover{
+        animation: jump 1s ease;
+        animation-iteration-count: infinite
+      }
+    .checkedBT{
+      background-color:var(--BETA-BROWN);
+      outline: 1px solid var(--BETA-BROWN);
+    }
+
+      @keyframes jump {
+        0%   { transform: translateY(0); }
+        40%  { transform: translateY(-7px); }
+        60%  { transform: translateY(-7px); }
+        100% { transform: translateY(0); }
+      }
+
+
     .work_thumb{
       width:25px; position: absolute; z-index: 3;
       display: block;
@@ -679,7 +721,11 @@ html,body {
       line-height: 1.3rem;
     }
 
-    @media(max-width: 600px){
+
+
+
+/* 모바일용 CSS */
+    @media only screen and (max-width: 767px){
   .flex{
     flex-direction: column;
   }
