@@ -755,29 +755,29 @@ html,body {
     }
 
   .crossA{
-      top: -2rem;
-      left: -2rem;
+      top: -1.5rem;
+      left: -1.5rem;
     }
     .crossB{
-      top: -2rem;
-      right: -2rem;
+      top: -1.5rem;
+      right: -1.5rem;
     }
 
     .crossC{
-      bottom: -2rem;
-      left: -2rem;
+      bottom: -1.5rem;
+      left: -1.5rem;
     }
     .crossD{
-      bottom: -2rem;
-      right: -2rem;
+      bottom: -1.5rem;
+      right: -1.5rem;
     }
 
       .bar.horizontal {
-      height: 0.15rem;   /* 선 굵기 */
+      height: 0.12rem;   /* 선 굵기 */
     }
 
     .bar.vertical {
-      width: 0.15rem;    /* 선 굵기 */
+      width: 0.12rem;    /* 선 굵기 */
     }
     
   
