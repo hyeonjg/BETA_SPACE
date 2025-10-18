@@ -120,7 +120,7 @@ html,body {
 
 
     .bottomM{
-      margin-bottom: 30px;
+      margin-bottom: 3rem;
     }
     .tum{
       height:80px;
@@ -737,6 +737,9 @@ html,body {
     }
       .wrap{
       width:80%; 
+    }
+    .bottomM{
+      margin-bottom: 3rem;
     }
 
   .flex{
