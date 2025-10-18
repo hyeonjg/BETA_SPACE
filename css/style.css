@@ -256,28 +256,28 @@ html,body {
 
 
     .crossA{
-      top: -50px;
-      left: -180px;
+      top: -3rem;
+      left: -10rem;
     }
     .crossB{
-      top: -50px;
-      right: -180px;
+      top: -3rem;
+      right: -10rem;
     }
 
     .crossC{
-      bottom: -50px;
-      left: -180px;
+      bottom: -3rem;
+      left: -10rem;
     }
     .crossD{
-      bottom: -50px;
-      right: -180px;
+      bottom: -3rem;
+      right: -10rem;
     }
 
 
     .cross {
       position: absolute;
-      width: 40px;   /* 전체 크기 */
-      height: 40px;
+      width: 2.5rem;   /* 전체 크기 */
+      height: 2.5rem;
     }
 
     .bar {
@@ -289,14 +289,14 @@ html,body {
       top: 50%;
       left: 0;
       width: 100%;
-      height: 3px;   /* 선 굵기 */
+      height: 0.2rem;   /* 선 굵기 */
       transform: translateY(-50%);
     }
 
     .bar.vertical {
       top: 0;
       left: 50%;
-      width: 3px;    /* 선 굵기 */
+      width: 0.2rem;    /* 선 굵기 */
       height: 100%;
       transform: translateX(-50%);
     }
@@ -732,4 +732,40 @@ html,body {
   .flexitem-half{
     width:100%;
   }
+  #down{display: none;   
+      }
+
+  .cross {
+      position: absolute;
+      width: 1.3rem;   /* 전체 크기 */
+      height: 1.3rem;
+    }
+
+  .crossA{
+      top: -3rem;
+      left: -3rem;
+    }
+    .crossB{
+      top: -3rem;
+      right: -3rem;
+    }
+
+    .crossC{
+      bottom: -3rem;
+      left: -3rem;
+    }
+    .crossD{
+      bottom: -3rem;
+      right: -3rem;
+    }
+
+      .bar.horizontal {
+      height: 0.15rem;   /* 선 굵기 */
+    }
+
+    .bar.vertical {
+      width: 0.15rem;    /* 선 굵기 */
+    }
+    
+  
 }
