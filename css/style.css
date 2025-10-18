@@ -727,6 +727,10 @@ html,body {
 /* 모바일용 CSS */
     @media only screen and (max-width: 767px){
       p{font-size: 1rem; line-height: 2rem; word-break: normal;}
+      .ko{
+      font-size: 1rem;
+      line-height: 1.8rem;
+    }
       .en{
       font-size: 1.2rem;
       line-height: 2.0rem; hyphens: auto; overflow-wrap: break-word;
