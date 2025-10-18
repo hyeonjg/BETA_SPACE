@@ -391,7 +391,7 @@ html,body {
 
     .logoimg{width: 100%;}
     .imglink{
-      height:6rem; padding: 1rem;
+      height:4.5rem; padding: 1rem;
     }
 
     #dot_bt{
@@ -726,9 +726,13 @@ html,body {
 
 /* 모바일용 CSS */
     @media only screen and (max-width: 767px){
-      p{ word-break: break-all;}
+      p{font-size: 1rem; line-height: 2rem; word-break: normal;}
+      .en{
+      font-size: 1.2rem;
+      line-height: 2.0rem; hyphens: auto; overflow-wrap: break-word;
+    }
       .wrap{
-      width:85%; 
+      width:80%; 
     }
 
   .flex{
@@ -747,21 +751,21 @@ html,body {
     }
 
   .crossA{
-      top: -3rem;
-      left: -3rem;
+      top: -2rem;
+      left: -2rem;
     }
     .crossB{
-      top: -3rem;
-      right: -3rem;
+      top: -2rem;
+      right: -2rem;
     }
 
     .crossC{
-      bottom: -3rem;
-      left: -3rem;
+      bottom: -2rem;
+      left: -2rem;
     }
     .crossD{
-      bottom: -3rem;
-      right: -3rem;
+      bottom: -2rem;
+      right: -2rem;
     }
 
       .bar.horizontal {
