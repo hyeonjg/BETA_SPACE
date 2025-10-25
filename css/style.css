@@ -93,7 +93,7 @@ html,body {
     .enmini{
       font-family: 'darker-grotesque';
       font-size: 0.8rem;
-      line-height: 1.4rem;
+      line-height: 1.2rem;
       margin-bottom: 20px;
     }
     .enbig{
@@ -181,7 +181,7 @@ html,body {
     .grid_text{
       display: grid;
       grid-template-columns: 40% 60%;
-      column-gap: 20px;
+      column-gap: 3rem;
       row-gap:50px;
     }
 
@@ -325,15 +325,13 @@ html,body {
 
     video{
       display:block;
+      width:100%; height: auto;
     }
     #cover_motion_poster{
       display: block; /*inline-block으로 할 경우 inline-height만큼의 여백이 생김.NG*/
       width:100vw; height: auto;
     }
 
-    video{
-      width:100%; height: auto;
-    }
 
     #text_explain_z{
       position: absolute;
@@ -505,7 +503,9 @@ html,body {
       opacity: 1;
     }
     .thumb_designer{width:25%; height:auto;}
-    .flex_info{width: 75%; margin: 0;}
+    .flex_info{width: 75%; margin: 0;
+    display: flex;
+    flex-direction: column;}
     
 
     .img_interview{width:100%; height:auto;}
@@ -515,10 +515,10 @@ html,body {
 
     .workBT{
       margin: 0.6rem; display: inline-block;
-      font-size: 1.5rem; background-color:var(--BETA-PINK); padding:0.3rem 1rem; 
+      font-size: 1.2rem; background-color:var(--BETA-PINK); padding:0.3rem 1rem; 
       border-radius: 1.5rem;
       outline: 1px solid var(--BETA-PINK); /* 윤곽선 */
-      outline-offset: 5px;
+      outline-offset: 0.3rem;
       position: relative; top: 0px; left:0px; z-index: 3;
       cursor:pointer;
       } 
@@ -545,7 +545,7 @@ html,body {
     }
 
     .bg_work{
-      width:100%; z-index: 1; position: sticky;
+      height: 50vh; z-index: 1; position: sticky;
       left:0;}
 
     .work_dot{
@@ -571,56 +571,7 @@ html,body {
       width: 350px; height:350px;
     }
 
-    #work_thumb1  { top: 31.8%; left: 36.68%; }
-#work_thumb2  { top: 31.8%; left: 39.36%; }
-#work_thumb3  { top: 31.8%; left: 41.96%; }
-#work_thumb4  { top: 31.8%; left: 44.64%; }
-#work_thumb5  { top: 36.45%; left: 36.68%; }
-#work_thumb6  { top: 36.45%; left: 39.36%; }
-#work_thumb7  { top: 36.45%; left: 41.96%; }
-#work_thumb8  { top: 36.45%; left: 44.64%; }
-
-#work_thumb9  { top: 46.65%; left: 34.15%; }
-#work_thumb10 { top: 46.65%; left: 36.76%; }
-#work_thumb11 { top: 46.65%; left: 39.36%; }
-#work_thumb12 { top: 46.65%; left: 41.96%; }
-#work_thumb13 { top: 46.65%; left: 44.64%; }
-#work_thumb14 { top: 51.67%; left: 34.15%; }
-#work_thumb15 { top: 51.67%; left: 36.76%; }
-#work_thumb16 { top: 51.67%; left: 39.36%; }
-#work_thumb17 { top: 51.67%; left: 41.96%; }
-#work_thumb18 { top: 51.67%; left: 44.64%; }
-
-#work_thumb19 { top: 60.7%; left: 36.68%; }
-#work_thumb20 { top: 60.7%; left: 39.36%; }
-#work_thumb21 { top: 60.7%; left: 41.96%; }
-#work_thumb22 { top: 60.7%; left: 44.64%; }
-#work_thumb23 { top: 66.01%; left: 36.68%; }
-#work_thumb24 { top: 66.01%; left: 39.36%; }
-#work_thumb25 { top: 66.01%; left: 41.96%; }
-#work_thumb26 { top: 66.01%; left: 44.64%; }
-
-#work_thumb27 { top: 31.8%; left: 55.8%; }
-#work_thumb28 { top: 35.76%; left: 55.8%; }
-#work_thumb29 { top: 39.75%; left: 55.8%; }
-#work_thumb30 { top: 43.74%; left: 55.8%; }
-#work_thumb31 { top: 47.73%; left: 55.8%; }
-#work_thumb32 { top: 54.33%; left: 55.8%; }
-#work_thumb33 { top: 58.32%; left: 55.8%; }
-#work_thumb34 { top: 62.3%; left: 55.8%; }
-#work_thumb35 { top: 66.29%; left: 55.8%; }
-#work_thumb36 { top: 70.28%; left: 55.8%; }
-
-#work_thumb37 { top: 31.8%; left: 58.78%; }
-#work_thumb38 { top: 35.76%; left: 58.78%; }
-#work_thumb39 { top: 39.75%; left: 58.78%; }
-#work_thumb40 { top: 43.74%; left: 58.78%; }
-#work_thumb41 { top: 47.73%; left: 58.78%; }
-#work_thumb42 { top: 54.33%; left: 58.78%; }
-#work_thumb43 { top: 58.32%; left: 58.78%; }
-#work_thumb44 { top: 62.3%; left: 58.78%; }
-#work_thumb45 { top: 66.29%; left: 58.78%; }
-#work_thumb46 { top: 70.28%; left: 58.78%; }
+    
 
 
     .box{
@@ -629,7 +580,6 @@ html,body {
     #booth_layout_3{
       margin: 0; padding:0; display: block;
       position: relative;
-      height: 80vh;
     }
     #booth_layout_2{
       margin: 0; padding:0; display: none;
@@ -841,5 +791,23 @@ html,body {
     #en-intro{
       display: none;
     }
+
+    /* DESIGNER 탭 */
+
+    .grid_container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 10px;
+      row-gap: 25px;
+    }
+    .thumb_designer{
+      display:none;
+    }
+    .flex_info{width: 100%; margin: 0;
+
+    /* WORK 탭 */
+
+    .bg_work{
+      width: 100%; height: auto;}
   
 }
