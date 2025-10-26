@@ -38,6 +38,9 @@ html,body {
       padding-top: 2.5rem;
       overflow-x: hidden;
     }
+    body.nonav{
+      padding: 0;
+    }
     body::selection{
       background-color: var(--BETA-LIGHTBROWN);
     }
@@ -272,6 +275,13 @@ html,body {
     }
     .bg-gray{
       background-color: var(--BETA-GRAY);
+    }
+    .bg-black{
+      background-color: black;
+    }
+    .bg-white{
+      background-color: white;
+      color: black;
     }
 
 
