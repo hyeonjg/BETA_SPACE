@@ -648,13 +648,13 @@ html,body {
       position: relative;
     }
     #booth_layout_1{
-      display: block;
+      display: none;
     }
     #booth_layout_2{
       display: none;
     }
     #booth_layout_3{
-      display: none;
+      display: block;
     }
 
     /*3층 좌표*/
