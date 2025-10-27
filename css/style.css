@@ -76,7 +76,7 @@ html,body {
     .ko{
       font-family: 'Pretendard';
       font-size: 1rem;
-      line-height: 1.8rem;
+      line-height: 1.6rem;
     }
     .komini{
       font-family: 'Pretendard';
@@ -91,7 +91,7 @@ html,body {
     .en{
       font-family: 'darker-grotesque';
       font-size: 1.3rem;
-      line-height: 1.8rem;
+      line-height: 1.7rem;
       margin-bottom: 1rem;
     }
     .enmini{
@@ -718,10 +718,10 @@ html,body {
 
 /* 모바일용 CSS */
     @media only screen and (max-width: 767px){
-      p{font-size: 0.9rem; line-height: 1.7rem; word-break: normal; text-align:justify;}
+      p{font-size: 0.9rem; line-height: 1.6rem; word-break: normal; text-align:justify;}
       .ko{
       font-size: 0.9rem;
-      line-height: 1.5rem;
+      line-height: 1.3rem;
     }
       .en{
         font-family: 'darker-grotesque';
