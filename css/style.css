@@ -153,6 +153,11 @@ html,body {
       justify-content: flex-start;
       gap: 5%;
     }
+    .flex_column{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
     #linkbox{
       display: flex;
       flex-direction: row;
@@ -219,7 +224,7 @@ html,body {
 
     .grid_img:hover,
     .grid_img:focus-within {
-      transform: scale(1.03); 
+      transform: scale(1.02); 
     }
 
     
@@ -504,19 +509,37 @@ html,body {
       width:100%; height:80vh;
     }
 
-    .thumb_work{width:95%; height:auto; transition: opacity 0.4s ease;}
-    .thumb_work_link{position: relative;}
-    .thumb_work_link:hover .thumb_work{opacity: 0.4;}
+    .thumb_work_link{
+    position: relative;
+    display: inline-block;
+  }
+
+  .thumb_work{
+    display: block;
+    width: 95%;
+    height: auto;
+    transition: transform 0.3s ease;
+    position: relative; /* z-index 작동을 위해 필요 */
+    z-index: 1;
+  }
+
+  .thumb_work_link:hover .thumb_work{
+    transform: scale(1.02);
+  }
+
     .thumb_title {
       position: absolute;
-      top: 50%;                /* 세로 중앙 */
+      display: inline-block;
+      top: 100%;                /* 세로 중앙 */
       left: 50%;               /* 가로 중앙 */
-      transform: translate(-50%, -50%); /* 중앙 정렬 */
+      transform: translate(-50%, 0%); /* 중앙 정렬 */
       padding: 8px 12px;
-      font-size: 2rem;
+      color: var(--BETA-PINK);
+      font-size: 1rem;
       white-space: nowrap;
       opacity: 0;             
       transition: opacity 0.4s ease;
+      z-index:3;
     }
     .thumb_work_link:hover .thumb_title{
       opacity: 1;
@@ -531,6 +554,13 @@ html,body {
     .fullimg{
       display: inline-block;
       width: 100%;
+    }
+
+    #floorBTBox{
+      display: block;
+    }
+    #trackBTBox{
+      display: none;
     }
 
     .workBT{
@@ -565,51 +595,452 @@ html,body {
     }
 
     .bg_work{
-      height: 50vh; z-index: 1; position: sticky;
+      width:100%;
+      height: auto; z-index: 1; position: static;
       left:0;}
 
     .work_dot{
-      --size: 10px;          /* 지름 */
-      --dot-color: currentColor;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 3%;         
+      aspect-ratio: 1/1;
       display:inline-block;
-      width:var(--size);
-      height:var(--size);
-      background:var(--dot-color);
-      border-radius:50%;
+      background-color: none;
       vertical-align:middle;
+      z-index: 300;
     }
 
-    .popup{
+    #work_popup{
       position:fixed;
       display:none;
       pointer-events:none;
-      max-width:200px;
-      z-index:1000;
+      max-width:350px;
+      z-index: 100;
     }
 
     #popup-img{
-      width: 350px; height:350px;
+      width: 350px; height: auto;
+      z-index:100;
+    }
+    #work_text_popup{
+      position: absolute;
+      top: 12%; left:50%;
+      transform: translate(-50%, 0%);
+      z-index:300;
+    }
+    #popup-title{
+      display: inline-block;
+      text-align: center;
+      font-size: 2.5rem;
+      line-height: 2.6rem;
+      padding: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
     
-
-
     .box{
-      width:100%; height:100%; margin:0; padding:0;
+      width:70%; height:100%; margin:auto; padding:0;
     }
-    #booth_layout_3{
+
+    .booth_layout{
+      width:100%;
       margin: 0; padding:0; display: block;
       position: relative;
     }
-    #booth_layout_2{
-      margin: 0; padding:0; display: none;
-    }
     #booth_layout_1{
-      margin: 0; padding:0; display: none;
+      display: block;
     }
-      #booth001{
-      top:180px; left:120px;
+    #booth_layout_2{
+      display: none;
     }
+    #booth_layout_3{
+      display: none;
+    }
+
+    /*3층 좌표*/
+    #work_69{
+      top:60.68%; left: 74.33%;
+    }
+    #work_68{
+      top:54.14%; left: 73.56%;
+    }
+    #work_33{
+      top:48.33%; left: 73.11%;
+    }
+    #work_32{
+      top:42.7%; left: 71.78%;
+    }
+    #work_53{
+      top:36.34%; left: 71.89%;
+    }
+    #work_52{
+      top:30.16%; left: 71.22%;
+    }
+    #work_27{
+       top:24.71%; left: 70.78%;
+    }
+    #work_26{
+       top:18.36%; left: 69.44%;
+    }
+    #work_37{
+       top:12.36%; left: 69.33%;
+    }
+    #work_36{
+       top:14.36%; left: 63.78%;
+    }
+    #work_71{
+       top:20.36%; left: 64.33%;
+    }
+    #work_70{
+       top:25.8%; left: 65.22%;
+    }
+    #work_19{
+       top:32.16%; left: 65.78%;
+    }
+    #work_18{
+       top:37.25%; left: 66.89%;
+    }
+    #work_97{
+       top:43.88%; left: 66.89%;
+    }
+    #work_96{
+       top:49.69%; left: 67.67%;
+    }
+    #work_63{
+       top:56.41%; left: 67.89%;
+    }
+    #work_62{
+       top:61.5%; left: 68.89%;
+    }
+
+    #work_122{
+       top:14.09%; left: 54.67%;
+    }
+    #work_123{
+       top:20.26%; left: 54.67%;
+    }
+    #work_76{
+       top:26.26%; left: 54.22%;
+    }
+    #work_77{
+       top:32.62%; left: 54.89%;
+    }
+    #work_78{
+       top:37.88%; left: 54.78%;
+    }
+    #work_79{
+       top:43.7%; left: 54.89%;
+    }
+
+    #work_39{
+        top:74.03%; left: 41.11%;
+    }
+    #work_93{
+       top:73.12%; left: 30.67%;
+    }
+
+    #work_80{
+       top:60.32%; left: 48%;
+    }
+    #work_81{
+      top:60.04%; left: 44.11%;
+    }
+    #work_54{
+      top:59.86%; left: 39%;
+    }
+    #work_55{
+      top:60.59%; left: 34.11%;
+    }
+    #work_38{
+      top:60.23%; left: 30.11%;
+    }
+    #work_92{
+      top:60.95%; left: 24.89%;
+    }
+
+    #work_75{
+      top:38.43%; left: 21.78%;
+    }
+    #work_67{
+      top:7.37%; left: 39.78%;
+    }
+
+    #work_74{
+      top:53.14%; left: 24.67%;
+    }
+    #work_66{
+      top:52.6%; left: 30.22%;
+    }
+    #work_110{
+      top:52.6%; left: 34.44%;
+    }
+    #work_111{
+      top:52.78%; left: 38.11%;
+    }
+    #work_126{
+      top:53.5%; left: 43.44%;
+    }
+    #work_127{
+      top:53.14%; left: 49.11%;
+    }
+
+    #work_108{
+      top:43.24%; left: 47.89%;
+    }
+    #work_109{
+      top:37.16%; left: 47.11%;
+    }
+    #work_104{
+      top:31.53%; left: 48%;
+    }
+    #work_105{
+      top:25.71%; left: 48.56%;
+    }
+    #work_138{
+      top:19.54%; left: 48.56%;
+    }
+    #work_139{
+      top:13.36%; left: 47.22%;
+    }
+
+    #work_114{
+      top:26.8%; left: 34%;
+    }
+    #work_115{
+      top:32.98%; left: 35%;
+    }
+
+
+
+    /*2층 좌표*/
+    #work_25{
+      top:62%; left: 73.89%;
+    }
+    #work_6{
+      top:62%; left: 78.67%;
+    }
+    #work_107{
+      top:62%; left: 84%;
+    }
+    #work_24{
+      top:70%; left: 73.89%;
+    }
+    #work_5{
+      top:70%; left: 78.67%;
+    }
+    #work_106{
+      top:70%; left: 84%;
+    }
+
+    #work_121{
+      top:48.05%; left: 85%;
+    }
+    #work_103{
+      top:41.91%; left: 85%;
+    }
+    #work_61{
+      top:35.02%; left: 85%;
+    }
+    #work_17{
+      top:29.25%; left: 85%;
+    }
+    #work_120{
+      top:48.05%; left: 91%;
+    }
+    #work_102{
+      top:41.91%; left: 91%;
+    }
+    #work_60{
+      top:35.02%; left: 91%;
+    }
+    #work_16{
+      top:29.25%; left: 91%;
+    }
+
+    #work_129{
+      top:19%; left: 73.89%;
+    }
+    #work_117{
+      top:19%; left: 78.67%;
+    }
+    #work_133{
+      top:19%; left: 84%;
+    }
+    #work_128{
+      top:10%; left: 73.89%;
+    }
+    #work_116{
+      top:10%; left: 78.67%;
+    }
+    #work_132{
+      top:10%; left: 84%;
+    }
+
+    #work_50{
+      top:32.79%; left: 68%;
+    }
+    #work_140{
+      top:40.05%; left: 68%;
+    }
+    #work_142{
+      top:46.01%; left: 68%;
+    }
+    #work_51{
+      top:32.79%; left: 74%;
+    }
+    #work_141{
+      top:40.05%; left: 74%;
+    }
+    #work_143{
+      top:46.01%; left: 74%;
+    }
+
+    /*1층 좌표*/
+    #work_23{
+      top:53%; left: 40.7%;
+    }
+    #work_65{
+      top:53%; left: 45.33%;
+    }
+    #work_135{
+      top:53%; left: 50.33%;
+    }
+    #work_99{
+      top:53%; left: 55.11%;
+    }
+    #work_85{
+      top:45%; left: 54.89%;
+    }
+    #work_45{
+      top:45%; left: 49.89%;
+    }
+    #work_113{
+      top:45%; left: 45.11%;
+    }
+    #work_95{
+      top:45%; left: 40.44%;
+    }
+    #work_2{
+      top:45%; left: 35.78%;
+    }
+
+    #work_1{
+      top:34%; left: 35.67%;
+    }
+    #work_48{
+      top:34%; left: 40.11%;
+    }
+    #work_94{
+      top:34%; left: 44.78%;
+    }
+    #work_118{
+      top:34%; left: 49.22%;
+    }
+    #work_112{
+      top:34%; left: 53.78%;
+    }
+    #work_44{
+      top:34%; left: 58.89%;
+    }
+    #work_84{
+      top:34%; left: 63.11%;
+    }
+    #work_64{
+      top:26%; left: 63.56%;
+    }
+    #work_22{
+      top:26%; left: 58.33%;
+    }
+    #work_28{
+      top:26%; left: 54%;
+    }
+    #work_136{
+      top:26%; left: 49.33%;
+    }
+    #work_137{
+      top:26%; left: 45.22%;
+    }
+    #work_130{
+      top:26%; left: 40%;
+    }
+    #work_131{
+      top:26%; left: 35.67%;
+    }
+
+    #work_119{
+      top:12%; left: 68.56%;
+    }
+    #work_49{
+      top:12%; left: 74.78%;
+    }
+    #work_57{
+      top:12%; left: 82%;
+    }
+    #work_73{
+      top:12%; left: 87.11%;
+    }
+    #work_47{
+      top:12%; left: 93.11%;
+    }
+    #work_101{
+      top:20%; left: 93.11%;
+    }
+    #work_41{
+      top:20%; left: 87.11%;
+    }
+    #work_59{
+      top:20%; left: 82%;
+    }
+    #work_21{
+      top:20%; left: 74.78%;
+    }
+    #work_125{
+      top:20%; left: 68.56%;
+    }
+
+    #work_98{
+      top:45%; left: 63.33%;
+    }
+    #work_124{
+      top:45%; left: 68.56%;
+    }
+    #work_20{
+      top:45%; left: 73.33%;
+    }
+    #work_58{
+      top:45%; left: 77.67%;
+    }
+    #work_40{
+      top:45%; left: 82.67%;
+    }
+    #work_100{
+      top:45%; left: 86.33%;
+    }
+    #work_46{
+      top:53%; left: 86.33%;
+    }
+    #work_72{
+      top:53%; left: 82.67%;
+    }
+    #work_56{
+      top:53%; left: 77.67%;
+    }
+    #work_134{
+      top:53%; left: 73.33%;
+    }
+    #work_82{
+      top:53%; left: 68.56%;
+    }
+    #work_83{
+      top:53%; left: 63.33%;
+    }
+
+
+
+
+
+
+
 
     #guestbook-form {
       display: flex;
@@ -763,6 +1194,14 @@ html,body {
       margin-bottom: 3rem;
     }
 
+    section.bg-black .wrap {
+      width:100%;
+    }
+    section.bg-white .wrap {
+      width:100%;
+    }
+
+
   .flex{
     flex-direction: column;
   }
@@ -833,6 +1272,9 @@ html,body {
     .thumb_work{
       width:100%;
       margin-bottom: 1.5rem;
+    }
+    .thumb_title {
+      top: 95%;
     }
   
 }
