@@ -179,10 +179,9 @@ dots.forEach(dot => {
     popupName.textContent = dot.dataset.name;
     popup.style.display = 'block';
     popupText.style.display = 'block';
-
-    if (popupMsg && popupMsg.style.display !== 'none') {
-      popupMsg.style.display = 'none';
-    }
+    popupMsg.style.display = 'none';
+    
+    
   });
 
   dot.addEventListener('mousemove', e => {
@@ -208,6 +207,7 @@ dots.forEach(dot => {
   dot.addEventListener('mouseout', () => {
     popup.style.display = 'none';
     popupText.style.display = 'none';
+    popupMsg.style.display = 'block';
   });
 });
 
