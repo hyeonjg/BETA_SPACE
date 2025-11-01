@@ -1,5 +1,5 @@
 *{
-  font-family: 'darker-grotesque', 'Pretendard'; 
+  font-family: 'Pretendard'; 
 }
 
 
@@ -30,7 +30,7 @@ html,body {
       background-color: white;
       transition: background-color 0.5s ease;
 
-      font-family: 'Pretendard', 'darker-grotesque';
+      font-family: 'Pretendard';
       font-size: 14px;
       color: #000;
       margin: 0;
@@ -47,9 +47,15 @@ html,body {
 
     /* 배경 이미지용*/
     body.main {
-      background-image: url("../img/bg.gif");
+      background-image: url("../img/main_bg.mp4");
       background-size: cover;
       background-position: center;
+    }
+    #main_bg{
+      position: absolute;
+      top: -2.5rem;
+      z-index: -1;
+      width:100%;
     }
 
     body.graybg{
@@ -68,15 +74,20 @@ html,body {
       word-break: keep-all; font-weight: normal;}    
     h2{font-size:2rem; font-weight: normal; word-break: keep-all;
       line-height: 2.3rem; margin-top:0.5rem;}
-    .enh2{font-size:1.7rem; line-height: 2.0rem;}
+    .enh2{font-family: 'darker-grotesque'; font-size:2.1rem; line-height: 2.0rem;}
     h3{font-size:1rem; font-weight: normal; word-break: keep-all;}
-    p{font-size: 1rem; line-height: 1.8rem; word-break: keep-all;}
+    p{display: inline-box;
+      font-size: 1rem; line-height: 1.7rem; word-break: keep-all;}
+
+    .p_narrow{font-family: 'darker-grotesque';
+      font-size: 1.3rem;
+      line-height: 1.5rem;}
 
 
     .ko{
       font-family: 'Pretendard';
       font-size: 1rem;
-      line-height: 1.6rem;
+      line-height: 1.5rem;
     }
     .komini{
       font-family: 'Pretendard';
@@ -86,8 +97,15 @@ html,body {
     .kobig{
       font-family: 'Pretendard';
       font-size: 3rem;
-      line-height: 2.2rem;
+      line-height: 3.2rem;
     }
+    .koname{
+      font-family: 'Pretendard';
+      font-size: 2.7rem;
+      line-height: 2.2rem;
+      margin-bottom: 0.7rem;
+    }
+    
     .en{
       font-family: 'darker-grotesque';
       font-size: 1.3rem;
@@ -97,19 +115,24 @@ html,body {
     .enmini{
       font-family: 'darker-grotesque';
       font-size: 0.8rem;
-      line-height: 1.2rem;
+      line-height: 1.0rem;
       margin-bottom: 20px;
     }
     .enbig{
       font-family: 'darker-grotesque';
       font-size: 1.5rem;
       line-height: 2.2rem;
+      letter-spacing: 0.03rem;
     }
     .entitle{
       font-family: 'darker-grotesque';
       font-size: 3rem;
+      line-height: 3.2rem;
+    }
+    .flex_column .entitle{
       line-height: 2.2rem;
     }
+    
 
     .ABAP{
       font-size: 10vw;
@@ -153,6 +176,14 @@ html,body {
       justify-content: flex-start;
       gap: 5%;
     }
+    .flex_designer_thumb{
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 2%;
+    }
+
     .flex_column{
       display: flex;
       flex-direction: column;
@@ -207,12 +238,35 @@ html,body {
       column-gap: 6rem;
       row-gap: 25px;
     }
+    .program_box{
+      width: 30%;
+    }
+    .program_box2{
+      height: 40vh;
+    }
+
+    .grid_designer_detail{
+      display: grid;
+      width: 50%;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1rem;
+      padding-top: 3rem;
+    }
 
     .grid_item{
       color: var(--BETA-PINK);
     }
+    .work_grid_item{
+      color: var(--BETA-PINK);
+      text-align: center;
+      margin-bottom: 0.7rem;
+    }
+    .work_textbox{
+      padding-top: 0.5rem;
+    }
 
     .grid_img{
+      display: block;
       width:100%;
       backface-visibility: hidden; /* 깜빡임 방지 */
       will-change: transform, filter;
@@ -252,8 +306,10 @@ html,body {
       color: var(--BETA-BROWN);
     }
     .t-pinkback{
+      display: inline-block;
       background-color: var(--BETA-PINK); display: inline;
       color: var(--BETA-GRAY);
+      padding: 0.1rem;
     }
     .t-brownback{
       background-color: var(--BETA-BROWN); display: inline;
@@ -456,17 +512,14 @@ html,body {
         }
       }
 
-      .hidden-section {
-        max-height: 0;             /* 처음에는 닫힘 */
-        overflow: hidden;           /* 내용 잘림 */
-        transition: max-height 0.5s ease;
-        padding: 0 1rem;            /* 패딩은 넣되, 열릴 때만 보이도록 */
+      #teaser_video{
+        padding: 2rem;
+      }
+      .wrap-video{
+        width:70%; margin: auto;
       }
 
-      .hidden-section.open {
-        max-height: 100vh;          /* 충분히 크게 설정 (내용에 맞춰 늘어남) */
-        padding: 1rem;              /* 열릴 때 패딩 보이도록 */
-      }
+      
       #motion_poster{
         height:90vh;
       }
@@ -512,11 +565,13 @@ html,body {
     .thumb_work_link{
     position: relative;
     display: inline-block;
+    width:95%;
+    
   }
 
   .thumb_work{
     display: block;
-    width: 95%;
+    width: 100%;
     height: auto;
     transition: transform 0.3s ease;
     position: relative; /* z-index 작동을 위해 필요 */
@@ -532,7 +587,7 @@ html,body {
       display: inline-block;
       top: 100%;                /* 세로 중앙 */
       left: 50%;               /* 가로 중앙 */
-      transform: translate(-50%, 0%); /* 중앙 정렬 */
+      transform: translate(-50%, 0); /* 중앙 정렬 */
       padding: 8px 12px;
       color: var(--BETA-PINK);
       font-size: 1rem;
@@ -544,7 +599,7 @@ html,body {
     .thumb_work_link:hover .thumb_title{
       opacity: 1;
     }
-    .thumb_designer{width:25%; height:auto;}
+    .thumb_designer{width:25%; height:auto; aspect-ratio: 1 / 1;}
     .flex_info{width: 75%; margin: 0;
     display: flex;
     flex-direction: column;}
@@ -559,9 +614,7 @@ html,body {
     #floorBTBox{
       display: block;
     }
-    #trackBTBox{
-      display: none;
-    }
+   
 
     .workBT{
       margin: 0.6rem; display: inline-block;
@@ -588,6 +641,10 @@ html,body {
         100% { transform: translateY(0); }
       }
 
+
+    #work_album_view{
+      display: none; 
+    }
 
     .work_thumb{
       width:25px; position: absolute; z-index: 3;
@@ -637,6 +694,12 @@ html,body {
       margin-bottom: 0.3rem;
     }
 
+    #popup-msg{
+      position: absolute;
+      top: 16%; left:50%;
+      transform: translate(-50%, 0%);
+    }
+
     
     .box{
       width:70%; height:100%; margin:auto; padding:0;
@@ -655,6 +718,13 @@ html,body {
     }
     #booth_layout_3{
       display: block;
+    }
+
+    .work_grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 1rem;
+      column-gap: 2%;
     }
 
     /*3층 좌표*/
@@ -1056,10 +1126,18 @@ html,body {
       font-size: 1rem;
       padding: 10px 12px;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 1.5rem;
       background-color: #fafafa;
       font-family: sans-serif;
       transition: border 0.2s ease, background-color 0.2s ease;
+      resize: none;
+      height: 1.5rem;
+    }
+
+    #guestbook-form input::placeholder,
+    #guestbook-form textarea::placeholder{
+      line-height: 1.7rem; 
+      color: var(--BETA-BROWN);
     }
 
     #guestbook-form input:focus,
@@ -1071,6 +1149,7 @@ html,body {
 
     #nickname {
       width: 10%;
+      
     }
 
     #message {
@@ -1084,6 +1163,7 @@ html,body {
     #guestbook-form button {
       align-self: flex-start;
       width: 10%;
+      height: 45px;
       padding: 10px 18px;
       font-size: 0.8rem;
       background-color: var(--BETA-GRAY, #333);
@@ -1180,7 +1260,12 @@ html,body {
     .enbig{
       font-family: 'darker-grotesque';
       font-size: 1.4rem;
-      line-height: 2.2rem;
+      line-height: 1.4rem;
+    }
+    .kobibig{
+      font-family: 'Pretendard';
+      font-size: 1.15rem;
+      line-height: 1.4rem;
     }
     .entitle{
       font-family: 'darker-grotesque';
@@ -1205,8 +1290,21 @@ html,body {
   .flex{
     flex-direction: column;
   }
+  .flex_designer{
+    flex-direction: column;
+  }
+  .flex_designer_thumb{
+    flex-direction: column;
+  }
   .flexitem-half{
     width:100%;
+  }
+  .program_box{
+    width:100%;
+    margin:3rem;
+  }
+  .program_box2{
+    height: 30vh;
   }
   #down{display: none;   
       }
@@ -1251,6 +1349,33 @@ html,body {
       display: none;
     }
 
+    #nav {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    backdrop-filter: blur(6px);
+  }
+
+  .menu {
+    font-size: 1rem;            /* 글자는 작게 */
+    padding: 3px 0.5rem;        /* 터치 대상 확보 (가로/세로) */
+    margin: 0 6px;             /* 항목 간 여백 */
+    white-space: nowrap;       /* 텍스트 줄바꿈 방지 */
+  }
+
+  .mobile-hidden{
+    display: none;;
+  }
+
+  .youtube_link{
+    width:100%; height:auto;
+  }
+  .wrap-video{
+    width:100%;
+  }
+
+
+
     /* DESIGNER 탭 */
 
     .grid_container{
@@ -1267,6 +1392,13 @@ html,body {
 
     /* WORK 탭 */
 
+    #floor-view{
+      display: none;
+    }
+    #work_album_view{
+      display: block;
+    }
+
     .bg_work{
       width: 100%; height: auto;}
     .thumb_work{
@@ -1275,6 +1407,29 @@ html,body {
     }
     .thumb_title {
       top: 95%;
+    }
+
+    /* MESSAGE 탭 */
+
+    #guestbook-form{
+      flex-direction: column;
+      justify-content: center;
+    }
+    #guestbook-form input,
+    #guestbook-form textarea{
+      width: 80%;
+      margin: auto;
+    }
+
+    #guestbook-form input::placeholder,
+    #guestbook-form textarea::placeholder{
+      text-align: center;
+    }
+
+    #guestbook-form button{
+      width: 100px;
+      border-radius: 1.5rem;
+      margin: auto;
     }
   
 }
