@@ -4,15 +4,23 @@ const booth3 = document.getElementById('booth_layout_3');
 const FloorBT1 = document.getElementById('F1');
 const FloorBT2 = document.getElementById('F2');
 const FloorBT3 = document.getElementById('F3');
-const TrackBT1 = document.getElementById('IDT');
-const TrackBT2 = document.getElementById('CX');
-const TrackBT3 = document.getElementById('UX');
-const TrackBT4 = document.getElementById('IL');
-const TrackBT5 = document.getElementById('ED');
-const TrackBT6 = document.getElementById('VD');
+
+const TrackBT_IDT = document.getElementById('IDT');
+const TrackBT_CX = document.getElementById('CX');
+const TrackBT_UX = document.getElementById('UX');
+const TrackBT_IL = document.getElementById('IL');
+const TrackBT_ED = document.getElementById('ED');
+const TrackBT_VD = document.getElementById('VD');
+
+const IDT_grid = document.getElementById('IDT_grid');
+const CX_grid = document.getElementById('CX_grid');
+const UX_grid = document.getElementById('UX_grid');
+const IL_grid = document.getElementById('IL_grid');
+const ED_grid = document.getElementById('ED_grid');
+const VD_grid = document.getElementById('VD_grid');
 
 const FloorBTlist = [FloorBT1, FloorBT2, FloorBT3];
-const TrackBTlist = [TrackBT1, TrackBT2, TrackBT3, TrackBT4, TrackBT5, TrackBT6];
+const TrackBTlist = [TrackBT_IDT, TrackBT_CX, TrackBT_UX, TrackBT_IL, TrackBT_ED, TrackBT_VD];
 
 const FloorBTLabelList = document.querySelectorAll('.floorBT');
 const TrackBTLabelList = document.querySelectorAll('.trackBT');
@@ -56,6 +64,100 @@ FloorBT3.onclick = () => {
 	
 }
 
+//track BT
+
+IDT_grid.className = 'work_grid';
+  CX_grid.className = 'hiddenobj';
+  UX_grid.className = 'hiddenobj';
+  IL_grid.className = 'hiddenobj';
+  ED_grid.className = 'hiddenobj';
+  VD_grid.className = 'hiddenobj';
+
+TrackBT_IDT.onclick = () => {
+  IDT_grid.className = 'work_grid';
+  CX_grid.className = 'hiddenobj';
+  UX_grid.className = 'hiddenobj';
+  IL_grid.className = 'hiddenobj';
+  ED_grid.className = 'hiddenobj';
+  VD_grid.className = 'hiddenobj';
+
+  TrackBTLabelList.forEach(TrackBT => {
+  TrackBT.classList.remove('checkedBT');
+});
+  TrackBTLabelList[0].classList.add('checkedBT');
+}
+
+TrackBT_CX.onclick = () => {
+  IDT_grid.className = 'hiddenobj';
+  CX_grid.className = 'work_grid';
+  UX_grid.className = 'hiddenobj';
+  IL_grid.className = 'hiddenobj';
+  ED_grid.className = 'hiddenobj';
+  VD_grid.className = 'hiddenobj';
+
+  TrackBTLabelList.forEach(TrackBT => {
+  TrackBT.classList.remove('checkedBT');
+});
+  TrackBTLabelList[1].classList.add('checkedBT');
+}
+
+TrackBT_UX.onclick = () => {
+  IDT_grid.className = 'hiddenobj';
+  CX_grid.className = 'hiddenobj';
+  UX_grid.className = 'work_grid';
+  IL_grid.className = 'hiddenobj';
+  ED_grid.className = 'hiddenobj';
+  VD_grid.className = 'hiddenobj';
+
+  TrackBTLabelList.forEach(TrackBT => {
+  TrackBT.classList.remove('checkedBT');
+});
+  TrackBTLabelList[2].classList.add('checkedBT');
+}
+
+TrackBT_IL.onclick = () => {
+  IDT_grid.className = 'hiddenobj';
+  CX_grid.className = 'hiddenobj';
+  UX_grid.className = 'hiddenobj';
+  IL_grid.className = 'work_grid';
+  ED_grid.className = 'hiddenobj';
+  VD_grid.className = 'hiddenobj';
+
+  TrackBTLabelList.forEach(TrackBT => {
+  TrackBT.classList.remove('checkedBT');
+});
+  TrackBTLabelList[3].classList.add('checkedBT');
+}
+
+TrackBT_ED.onclick = () => {
+  IDT_grid.className = 'hiddenobj';
+  CX_grid.className = 'hiddenobj';
+  UX_grid.className = 'hiddenobj';
+  IL_grid.className = 'hiddenobj';
+  ED_grid.className = 'work_grid';
+  VD_grid.className = 'hiddenobj';
+
+  TrackBTLabelList.forEach(TrackBT => {
+  TrackBT.classList.remove('checkedBT');
+});
+  TrackBTLabelList[4].classList.add('checkedBT');
+}
+
+TrackBT_VD.onclick = () => {
+  IDT_grid.className = 'hiddenobj';
+  CX_grid.className = 'hiddenobj';
+  UX_grid.className = 'hiddenobj';
+  IL_grid.className = 'hiddenobj';
+  ED_grid.className = 'hiddenobj';
+  VD_grid.className = 'work_grid';
+
+  TrackBTLabelList.forEach(TrackBT => {
+  TrackBT.classList.remove('checkedBT');
+});
+  TrackBTLabelList[5].classList.add('checkedBT');
+}
+
+
 
 
 
@@ -68,6 +170,7 @@ const popupText = document.getElementById('work_text_popup');
 const popupImg = document.getElementById('popup-img');
 const popupTitle = document.getElementById('popup-title');
 const popupName = document.getElementById('popup-name');
+const popupMsg = document.getElementById('popup-msg');
 
 dots.forEach(dot => {
   dot.addEventListener('mouseover', () => {
@@ -76,6 +179,10 @@ dots.forEach(dot => {
     popupName.textContent = dot.dataset.name;
     popup.style.display = 'block';
     popupText.style.display = 'block';
+
+    if (popupMsg && popupMsg.style.display !== 'none') {
+      popupMsg.style.display = 'none';
+    }
   });
 
   dot.addEventListener('mousemove', e => {
